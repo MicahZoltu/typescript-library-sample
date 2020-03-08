@@ -1,0 +1,37 @@
+{
+	"name": "@my-npm-name/my-package-name",
+	"description": "My Description.",
+	"version": "1.0.0",
+	"license": "Unlicense",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:<GitHubUsername>/<github-repository-name>.git"
+	},
+	"main": "output-cjs/index.js",
+	"module": "output-es/index.js",
+	"exports": {
+		"default": "output-es/index.js",
+		"import": "output-es/index.js",
+		"node": "output-es/index.js",
+		"require": "output-cjs/index.js"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"@zoltu/typescript-transformer-append-js-extension": "1.0.1",
+		"ttypescript": "1.5.10",
+		"typescript": "3.8.3"
+	},
+	"scripts": {
+		"build": "ttsc --project tsconfig-es.json && tsc --project tsconfig-cjs.json",
+		"watch-es": "ttsc --project tsconfig-es.json --watch",
+		"watch-cjs": "tsc --project tsconfig-cjs.json --watch",
+		"test": "cd ../test && npm run test",
+		"prepublishOnly": "npm run build && npm run test && npm run build && node --eval \"require('fs').copyFile('../README.md', 'README.md', error => {if(error) throw error})\"",
+		"postpublish": "node --eval \"require('fs').unlink('README.md', error => {if(error) throw error})\""
+	},
+	"files": [
+		"/output-es/",
+		"/output-cjs/",
+		"/source/"
+	]
+}

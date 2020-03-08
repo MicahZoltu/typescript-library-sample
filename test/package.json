@@ -1,0 +1,14 @@
+{
+	"dependencies": {
+		"@types/jasmine": "3.5.8",
+		"@my-npm-name/my-package-name": "file:../library",
+		"jasmine": "3.5.0"
+	},
+	"devDependencies": {
+		"ts-node": "8.6.2",
+		"typescript": "3.8.3"
+	},
+	"scripts": {
+		"test": "ts-node --project tsconfig.json source/index.ts"
+	}
+}
