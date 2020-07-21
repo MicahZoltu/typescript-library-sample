@@ -7,13 +7,13 @@
 		"type": "git",
 		"url": "git@github.com:<GitHubUsername>/<github-repository-name>.git"
 	},
-	"main": "output-cjs/index.js",
-	"module": "output-es/index.js",
+	"main": "./output-cjs/index.js",
+	"module": "./output-es/index.js",
 	"exports": {
-		"default": "output-es/index.js",
-		"import": "output-es/index.js",
-		"node": "output-es/index.js",
-		"require": "output-cjs/index.js"
+		"default": "./output-es/index.js",
+		"import": "./output-es/index.js",
+		"node": "./output-es/index.js",
+		"require": "./output-cjs/index.js"
 	},
 	"dependencies": {},
 	"devDependencies": {
