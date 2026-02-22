@@ -2,7 +2,7 @@
 	"dependencies": {
 		"@types/jasmine": "3.5.8",
 		"@my-npm-name/my-package-name": "file:../library",
-		"jasmine": "3.5.0"
+		"jasmine": "3.6.1"
 	},
 	"devDependencies": {
 		"ts-node": "8.6.2",
